@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保存済みリスト - CarryOn</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/saved-lists.css">
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1>保存済みのリスト</h1>
+            <p style="color: var(--text-muted);">作成したリストの進捗を確認できます</p>
+        </header>
+        
+        <div id="saved-lists-container" class="saved-list-container">
+            <!-- JavaScript will render cards here -->
+        </div>
+        
+        <div class="mt-4">
+            <a href="scene-select.html" class="btn btn-primary">新しいリストを作成</a>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a href="scene-select.html" style="color: var(--text-muted); font-size: 0.875rem;">← 戻る</a>
+        </div>
+    </div>
+    <script type="module" src="../js/pages/saved-lists.js"></script>
+</body>
+</html>

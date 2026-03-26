@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>場面選択 - CarryOn</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <style>
+        .scene-list {
+            padding: 0;
+            list-style: none;
+        }
+        .scene-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        .scene-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+        .scene-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+            background: #f8f9ff;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        .scene-info {
+            flex-grow: 1;
+        }
+        .scene-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: block;
+        }
+        .scene-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1>場面を選択</h1>
+            <p style="color: var(--text-muted);">シチュエーションに合わせてリストを作成します</p>
+        </header>
+
+        <div class="mb-4">
+            <a href="saved-lists.html" class="btn btn-outline">→ 保存済みのリストを見る</a>
+        </div>
+
+        <div id="scene-list-container">
+            <div id="scene-list" class="scene-list">
+                <!-- ここにJavaScriptでリストが生成されます -->
+            </div>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a href="login.html" style="color: var(--text-muted); font-size: 0.875rem;">← ログアウト</a>
+        </div>
+    </div>
+    <script type="module" src="../js/pages/scene-select.js"></script>
+</body>
+</html>

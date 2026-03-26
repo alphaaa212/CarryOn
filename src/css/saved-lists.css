@@ -1,0 +1,83 @@
+.saved-list-container {
+    padding: 0;
+}
+
+.saved-list-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+    height: 100px; /* 高さを固定して揃える */
+}
+
+.saved-list-row:active {
+    transform: scale(0.98);
+}
+
+.saved-list-link {
+    flex: 9; /* 10分の9を占める */
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-main);
+    text-decoration: none;
+    min-width: 0; /* 折り返し防止に必要 */
+}
+
+.list-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 長いタイトルは...で省略 */
+}
+
+.progress-container {
+    height: 6px;
+    background: #f1f2f6;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--success-color);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.btn-list-delete {
+    flex: 1; /* 10分の1を占める */
+    height: 40px; /* 縦幅を制限 */
+    margin: 0 10px; /* 左右と上下の余白（rowがalign-items: centerなので上下中央になる） */
+    background: #fff5f5;
+    color: var(--danger-color);
+    border: 1px solid #fee2e2;
+    border-radius: 4px; /* 少し丸みを帯びさせる */
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-list-delete:hover {
+    background: #fee2e2;
+}

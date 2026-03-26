@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チェックリスト - CarryOn</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/checklist.css">
+</head>
+<body>
+    <style>
+        .progress-header {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .progress-percentage {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+        .progress-bar-bg {
+            height: 8px;
+            background: #f1f2f6;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.4s cubic-bezier(.4, .0, .23, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container main-layout">
+        <header class="mb-4">
+            <h1 id="scene-title-display">読み込み中...</h1>
+            <div id="title-edit-area" style="display: none;">
+                <input type="text" id="list-title-input" class="edit-input" placeholder="タイトルを入力 (例: キャンプ, 買い物)" style="font-size: 1.5rem; font-weight: 800; width: 100%; margin-bottom: 8px;">
+                <div id="error-message" style="color: var(--danger-color); font-size: 0.875rem; margin-bottom: 8px; display: none;"></div>
+            </div>
+        </header>
+
+        <div class="progress-header">
+            <div class="progress-info">
+                <div>
+                    <span id="checked-count">0</span> / <span id="total-count">0</span> 完了
+                </div>
+                <div class="progress-percentage" id="progress-percent">0%</div>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-bar" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <ul id="item-list" class="item-list"></ul>
+        
+        <div id="add-item-area" class="add-item-container" style="display: none;">
+            <button id="add-item-btn" class="btn-add-outline">＋ 項目を追加</button>
+        </div>
+
+        <div class="controls">
+            <button id="edit-mode-btn" class="btn btn-primary">編集モード</button>
+            <button id="back-btn" class="btn btn-secondary">戻る</button>
+        </div>
+    </div>
+    <script type="module" src="../js/pages/checklist.js"></script>
+</body>
+</html>
